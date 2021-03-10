@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 111
+        versionName "1.1.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // view model 配置
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    // binding 配置
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation rootProject.ext.deps.kotlinStdlib
+    implementation rootProject.ext.deps.coreKtx
+    implementation rootProject.ext.deps.appcompat
+    testImplementation rootProject.ext.deps.junit
+    androidTestImplementation rootProject.ext.deps.junitTest
+    androidTestImplementation rootProject.ext.deps.espressoCore
+
+    api project(":base")
+    api project(":vm")
+    api project(":multitype")
+
+    api rootProject.ext.deps.commonJava8
+    api rootProject.ext.deps.activityKtx
+    api rootProject.ext.deps.fragmentKtx
+    api rootProject.ext.deps.fragmentationx
+    api rootProject.ext.deps.glide
+}

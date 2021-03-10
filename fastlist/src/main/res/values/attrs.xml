@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopBarView">
+        <attr name="backVisible" format="boolean" />
+        <attr name="backResId" format="reference" />
+        <attr name="topBarTitle" format="string" />
+        <attr name="topBarTitleColor" format="reference|color" />
+        <attr name="topBarTitleSize" format="dimension" />
+        <attr name="needStatusBarHeight" format="boolean" />
+        <attr name="leftContainerViewId" format="reference" />
+        <attr name="rightContainerViewId" format="reference" />
+    </declare-styleable>
+</resources>

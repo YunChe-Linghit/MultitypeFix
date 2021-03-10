@@ -1,0 +1,8 @@
+include ':multitype'
+include ':vm'
+rootProject.name = "MultitypeFix"
+include ':app'
+include ':base'
+include ':fast'
+include ':fastlist'
+include ':fastpager'

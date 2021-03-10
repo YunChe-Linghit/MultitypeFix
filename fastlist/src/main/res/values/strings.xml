@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="fast_list_empty_data">空空如也～</string>
+    <string name="fast_list_network_error">网络好像出了点异常～</string>
+    <string name="fast_list_refresh">刷新</string>
+    <string name="fast_list_loading">正在加載…</string>
+
+</resources>
